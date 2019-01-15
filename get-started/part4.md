@@ -125,10 +125,14 @@ so they can connect to each other.
 
 Now, create a couple of VMs using our node management tool,
 `docker-machine`:
-
+NOTE: While the Docker source page uses the basic line of:
 ```shell
 docker-machine create -d hyperv --hyperv-virtual-switch "myswitch" myvm1
 docker-machine create -d hyperv --hyperv-virtual-switch "myswitch" myvm2
+```
+The 18.09.1 version is not advised for further advancing of this Part 4 page, thus you should specify:
+```shell
+docker-machine create -d hyperv --hyperv-virtual-switch "myswitch" --hyperv-boot2docker-url "https://github.com/boot2docker/boot2docker/releases/download/v18.06.1-ce/boot2docker.iso" myvm1
 ```
 
 {% endcapture %}
